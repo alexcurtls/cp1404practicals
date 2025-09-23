@@ -1,3 +1,4 @@
+"""CP1404 - Temperatures Menu"""
 
 MENU = """C - Convert Celsius to Fahrenheit
 F - Convert Fahrenheit to Celsius
