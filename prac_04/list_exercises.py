@@ -1,5 +1,7 @@
+# Basic list operations
 
 def main():
+    """Get 5 numbers and print statistics based on given numbers"""
     numbers = []
     for i in range(1, 6):
         while True:
@@ -15,3 +17,14 @@ def main():
     print(f"The smallest number is {min(numbers)}")
     print(f"The largest number is {max(numbers)} ")
     print(f"The average of the numbers is {sum(numbers)}")
+
+# Woefully inadequate security checker
+
+def main():
+    """Get username and error check"""
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
+    user_name = input("What is your username?: ")
+    if user_name not in usernames:
+        print("Access Denied")
+    else:
+        print("Access Granted")
