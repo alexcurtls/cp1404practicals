@@ -12,4 +12,10 @@ COLOUR_TO_CODE = {"Absolute Zero": "#0048ba",
                   "Aqua": "#00ffff"}
 
 
+colour_name = input("Colour name: ")
 
+try:
+    print(COLOUR_TO_CODE[colour_name])
+except KeyError:
+    print("Invalid colour code")
+    colour_name = input("Colour name: ")
