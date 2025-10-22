@@ -1,27 +1,34 @@
 """
 Emails
 Estimate time: 30 minutes
-Actual time:
+Actual time: 90 minutes
+This program made me rethink my degree choices
 """
 
-email_to_name = {}
+# email_to_name = {}
 
 def main():
+    """Main function for storing name and email in a dictionary"""
+    email_to_name = {}
     while True:
-        email = input("Email: ")
-        user_name = email.split("@", 1)[0]
+        email = input("Email: ").strip()
         if email == "":
             break
         display = extract_display_name(email)
-        print(f"Is your name {display}? (Y/n) ")
-    # else:
-        # name = input("Name: ")
-        # email_to_name[email] = name
-
+        response = input(f"Is your name {display}? (Y/n) ").strip().lower()
+        if response in {"y",""}:
+            name = display
+            email_to_name[email] = name
+        else:
+            name = input("Name: ").strip()
+            email_to_name[email] = name
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 
 def extract_display_name(email):
+    """Extracts the email name and converts it into a normal name"""
     clean = email.strip()
     user_name = clean.split("@", 1)[0]
     user_name = user_name.replace(".", "_")
